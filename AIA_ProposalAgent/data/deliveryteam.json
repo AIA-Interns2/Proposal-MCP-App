@@ -1,0 +1,24 @@
+{
+    "TEAM_MEMBERS": {
+        "Samuel Cunningham": {
+            "ROLE": "Director & Senior AI Engineer",
+            "DESCRIPTION": "Sam is an experienced AI Engineer and the Director of AI Advancements. He has led numerous AI projects including chatbots, document processing systems, and automated reporting tools. Sam specializes in large language models and conversational AI.",
+            "IMAGE": "sam_headshot.jpg"
+        },
+        "Sam Cunningham": {
+            "ROLE": "Director & Senior AI Engineer",
+            "DESCRIPTION": "Sam is an experienced AI Engineer and the Director of AI Advancements. He has led numerous AI projects including chatbots, document processing systems, and automated reporting tools. Sam specializes in large language models and conversational AI.",
+            "IMAGE": "sam_headshot.jpg"
+        },
+        "Sean Oldenburger": {
+            "ROLE": "AI Engineer",
+            "DESCRIPTION": "Sean is an AI Engineer with expertise in machine learning and data science. He has developed multiple AI solutions including ECG analysis systems and automated document generation tools.",
+            "IMAGE": "sean_headshot.jpg"
+        },
+        "Lindsey Hershman": {
+            "ROLE": "Project Manager",
+            "DESCRIPTION": "Lindsey is an experienced Project Manager who oversees the delivery of AI solutions. She ensures projects are delivered on time and maintains clear communication with clients throughout the development process.",
+            "IMAGE": "lindsey_headshot.jpg"
+        }
+    }
+}

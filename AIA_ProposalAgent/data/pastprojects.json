@@ -1,0 +1,28 @@
+{
+    "PROJECTS": {
+        "Conveyancing Chatbot": {
+            "DESCRIPTION": "We built a chatbot for Capital Legal to help their employees and clients easily find answers to common questions based on a knowledge base of pdfs, word documents, websites etc. Each response ends with a call to action, redirecting users to the appropriate employee in Capital Legal."
+        },
+        "WADSIH AI Workshop Summariser": {
+            "DESCRIPTION": "As part of the Curtin Senior Leaders Forum 2024, we were contracted by the WA Data Science Innovation Hub (WADSIH) to develop a live AI workshop tool. The tool took input from 150+ Curtin employees spread across 15 groups. Our tool showed live insights into trending topics, real-time quotes, and generated a Word document report and PowerPoint summary for each group."
+        },
+        "Company Information Agent": {
+            "DESCRIPTION": "We were contracted by Spacecubed to build an AI agent for their Echo AI platform. This agent takes in a website URL for a company and searches through the website to find company information such as address, contact email and a description of their services. If any of this information is not found, the agent searches Google Maps and LinkedIn to find additional data."
+        },
+        "AI Educational Tutors": {
+            "DESCRIPTION": "We built personalised AI tutors for all online training courses on the Coursebox AI platform. This included a feature which automatically generates AI instructional videos for all course pages with human avatars and chatbots on each page which understand the course content and assist the learner."
+        },
+        "AI Agent Course Creation System": {
+            "DESCRIPTION": "We worked with Coursebox to replace their existing AI course creation system with an improved AI agent. This agent is currently responsible for generating all courses on the Coursebox platform."
+        },
+        "ECG Report Automation": {
+            "DESCRIPTION": "In collaboration with Curtin University, we created the architecture and built an agent system that took in 12 lead ECG signals from a machine and automatically researched and wrote a detailed ECG report for a doctor, highlighting potential issues, illnesses and recommending next steps."
+        },
+        "RTO Document Generation": {
+            "DESCRIPTION": "In partnership with Coursebox, we were hired by the WA Aviation College to generate documents for delivering face to face training courses. This agent system intakes a URL of an approved registered training organisation (RTO) unit, automatically generating Word documents, PowerPoints and an Excel spreadsheet which audits the course and proves it complies with RTO requirements."
+        },
+        "AI News Synthesis": {
+            "DESCRIPTION": "We built a system which automatically ingests news stories from specified websites, automatically tagging and categorizing them and providing a summarised report of all news stories for each employee's chosen categories/tags."
+        }
+    }
+}

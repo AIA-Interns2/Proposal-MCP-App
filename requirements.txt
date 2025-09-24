@@ -1,0 +1,8 @@
+flask
+openai
+python-dotenv
+python-docx
+azure-storage-blob
+mcp
+fastmcp
+gunicorn

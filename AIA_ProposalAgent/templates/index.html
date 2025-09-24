@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Information Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .info-table th {
+            width: 200px;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            margin-bottom: 20px;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .section-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            color: #333;
+        }
+        .subsection {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .subsection-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .contract-text {
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .timeline-summary {
+            margin-top: 15px;
+            font-style: italic;
+        }
+        .budget-table {
+            margin-top: 15px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        select.form-input {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Proposal Generator</h1>
+
+<div class="form-container">
+    <form method="POST">
+        <textarea name="user_input" id="user_input" placeholder="Paste text containing project information...">{{ user_input }}</textarea>
+        
+        <div class="section-header">Optional Inputs</div>
+        <table class="info-table">
+            <tr>
+                <th><label for="company_name">Company Name:</label></th>
+                <td><input type="text" id="company_name" name="company_name" class="form-input" 
+                    value="{{ table_data.get('BASIC_INFO', {}).get('COMPANY NAME', '') }}"></td>
+            </tr>
+            <tr>
+                <th><label for="client">Client:</label></th>
+                <td><input type="text" id="client" name="client" class="form-input"
+                    value="{{ table_data.get('BASIC_INFO', {}).get('CLIENT', '') }}"></td>
+            </tr>
+            <tr>
+                <th><label for="project_manager">Project Manager:</label></th>
+                <td>
+                    <select id="project_manager" name="project_manager" class="form-input">
+                        <option value="Samuel Cunningham" {% if table_data.get('BASIC_INFO', {}).get('PROJECT MANAGER') == 'Samuel Cunningham' %}selected{% endif %}>Samuel Cunningham</option>
+                        <option value="Sean Oldenburger" {% if table_data.get('BASIC_INFO', {}).get('PROJECT MANAGER') == 'Sean Oldenburger' %}selected{% endif %}>Sean Oldenburger</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="author">Author:</label></th>
+                <td>
+                    <select id="author" name="author" class="form-input">
+                        <option value="Samuel Cunningham" {% if table_data.get('BASIC_INFO', {}).get('AUTHOR') == 'Samuel Cunningham' %}selected{% endif %}>Samuel Cunningham</option>
+                        <option value="Sean Oldenburger" {% if table_data.get('BASIC_INFO', {}).get('AUTHOR') == 'Sean Oldenburger' %}selected{% endif %}>Sean Oldenburger</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Generate Proposal</button>
+    </form>
+</div>
+    
+    {% if error %}
+    <div class="error">
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+    
+    {% if table_data %}
+    <h2>Extracted Information</h2>
+
+    <!-- Basic Information Section -->
+    <div class="section-header">Basic Information</div>
+    <table class="info-table">
+        <tbody>
+            {% if table_data.BASIC_INFO %}
+                {% for key, value in table_data.BASIC_INFO.items() %}
+                <tr>
+                    <th>{{ key }}</th>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    
+    <!-- Scope -->
+    {% if table_data.SCOPE %}
+    <div class="subsection">
+        <div class="subsection-title">Scope</div>
+        <p class="contract-text">{{ table_data.SCOPE | replace("\n", "<br>") | safe }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Contract Structure -->
+    {% if table_data.CONTRACT_STRUCTURE %}
+    <div class="subsection">
+        <div class="subsection-title">Contract Structure</div>
+        <p class="contract-text">{{ table_data.CONTRACT_STRUCTURE | replace("\n", "<br>") | safe }}</p>
+    </div>
+    {% endif %}
+    
+    <!-- Key Deliverables -->
+    {% if table_data.KEY_DELIVERABLES %}
+    <div class="subsection">
+        <div class="subsection-title">Key Deliverables</div>
+        <ul>
+            {% for item in table_data.KEY_DELIVERABLES %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    
+    <!-- Assumptions -->
+    {% if table_data.ASSUMPTIONS %}
+    <div class="subsection">
+        <div class="subsection-title">Assumptions</div>
+        <ul>
+            {% for item in table_data.ASSUMPTIONS %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    
+    <!-- Timeline -->
+    {% if table_data.TIMELINE %}
+    <div class="subsection">
+        <div class="subsection-title">Timeline</div>
+        
+        {% if table_data.TIMELINE.MILESTONES %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Milestone</th>
+                    <th>Description</th>
+                    <th>Estimated Time (days)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for milestone in table_data.TIMELINE.MILESTONES %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ milestone.DESCRIPTION }}</td>
+                    <td>{{ milestone.ESTIMATED_TIME }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        
+        {% if table_data.TIMELINE.TOTAL_DURATION %}
+        <div class="timeline-summary">
+            <p><strong>Total Duration:</strong> {{ table_data.TIMELINE.TOTAL_DURATION }} days</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    <!-- Budget -->
+    {% if table_data.BUDGET %}
+    <div class="subsection">
+        <div class="subsection-title">Budget</div>
+        
+        {% if table_data.BUDGET.ADDITIONAL_COST %}
+        <table class="budget-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in table_data.BUDGET.ADDITIONAL_COST %}
+                <tr>
+                    <td>{{ item.CATEGORY }}</td>
+                    <td>{{ item.COST }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        
+        {% if table_data.BUDGET.TOTAL_COST %}
+        <p style="margin-top: 15px;"><strong>Total Cost:</strong> {{ table_data.BUDGET.TOTAL_COST }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Delivery Team -->
+    {% if table_data.DELIVERY_TEAM and table_data.DELIVERY_TEAM.TEAM_MEMBERS %}
+    <div class="subsection">
+        <div class="subsection-title">Delivery Team</div>
+        <ul>
+            {% for member in table_data.DELIVERY_TEAM.TEAM_MEMBERS %}
+            <li>{{ member }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Past Projects -->
+    {% if table_data.PAST_PROJECTS and table_data.PAST_PROJECTS.PAST_PROJECTS %}
+    <div class="subsection">
+        <div class="subsection-title">Past Projects</div>
+        <ul>
+            {% for project in table_data.PAST_PROJECTS.PAST_PROJECTS %}
+            <li>{{ project.PROJECT_NAME }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    
+    {% endif %}
+</body>
+</html>

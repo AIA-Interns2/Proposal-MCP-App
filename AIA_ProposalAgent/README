@@ -1,0 +1,21 @@
+.
+├── app.py                # Flask app entry point
+├── main.py               # Core logic for document creation
+├── ai_service.py         # Handles API calls to Azure OpenAI
+├── prompt_func.py        # Prompts + extraction logic for each proposal section
+├── docx_func.py          # All functions for building the Word document
+├── projectinfo.py        # JSON-based state manager
+├── project_proposal.docx # Output file (auto-generated)
+├── requirements.txt      # Python package dependencies
+├── .env                  # API key configuration (NOT to be committed)
+├── data/
+│   ├── deliveryteam.json # JSON file for team member details
+│   ├── pastprojects.json # JSON file for past projects
+│   └── projectinfo.json  # Auto-generated structured proposal info
+├── templates/
+│   └── index.html        # HTML form template for UI
+└── images/               # Contains logos and team images
+    ├── logo.png
+    ├── sam_headshot.png
+    ├── sean_headshot.png
+    └── other_assets/

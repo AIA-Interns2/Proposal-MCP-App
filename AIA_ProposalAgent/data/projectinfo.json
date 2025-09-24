@@ -1,0 +1,81 @@
+{
+  "BASIC_INFO": {
+    "PROJECT TITLE": "Automations",
+    "COMPANY NAME": "Iconic Wealth",
+    "CLIENT": "Kelly King",
+    "PROJECT MANAGER": "Sean Oldenburger",
+    "AUTHOR": "Sean Oldenburger",
+    "START DATE": "Not specified",
+    "END DATE": "2025-09-05",
+    "PROJECT DESCRIPTION": "Automating workflows to reduce manual tasks and improve efficiency at a finance firm."
+  },
+  "PLAN": "Website Interface:\n- Develop a user-friendly interface for automating workflows.\n- Include a drag-and-drop feature for uploading documents.\n- Provide a visual preview of uploaded documents.\n- Implement a page selection UI for users to choose which pages to extract information from.\n- Display a preview of extracted information in a structured format.\n- Enable export of extracted data to Word with styling options.\n- Ensure secure login with username and password protection.\n\nAI Backend Logic:\n- Create an AI system to automate the extraction of relevant information from uploaded documents.\n- Ensure an accuracy rate of 95%+ for data extraction.\n- Implement PDF parsing logic, including OCR for scanned documents.\n- Ensure secure file handling with instant erasure of data post-processing.\n- Develop logic for generating structured tables in Word format.\n\nIntegration with Existing Systems:\n- Assess current workflows and identify key operational challenges.\n- Integrate the automation system with existing CRM and invoicing systems.\n- Ensure compatibility with Microsoft Power Automate for workflow automation.\n\nDiscovery Phase:\n- Conduct a discovery session to outline the scope and feasibility of the project.\n- Identify specific automations to be developed based on client needs.\n- Gather necessary access and information required for the automation process.\n\nFuture Enhancements:\n- Plan for additional automations based on the outcomes of the discovery session.\n- Explore the potential for integrating AI note-taking capabilities during client meetings.\n- Consider developing a client portal for secure access to files and information.",
+  "SCOPE": "This project aims to automate workflows to reduce manual tasks and improve efficiency at Iconic Wealth, a finance firm. The automation will be developed using AI models to extract relevant information from uploaded documents, ensuring an accuracy rate of 95% or higher. The system will include features such as a user-friendly interface for document uploads, visual previews, and structured data extraction for export to Word format.\n\nAI Advancements will play a crucial role in the project by developing the AI backend logic that handles document parsing and data extraction. The project will also involve a discovery phase to outline the scope and feasibility of the automations, ensuring that the final solution meets the specific needs of the client.",
+  "CONTRACT_STRUCTURE": "Not specified",
+  "KEY_DELIVERABLES": [
+    "A user-friendly interface for automating workflows at Iconic Wealth.",
+    "A comprehensive discovery report outlining the scope and feasibility of the automation project.",
+    "An AI system capable of extracting relevant information from uploaded documents with an accuracy rate of 95% or higher.",
+    "Integration of the automation system with existing CRM and invoicing systems.",
+    "A structured data export feature that allows users to download extracted information in Word format."
+  ],
+  "ASSUMPTIONS": [
+    "Client will provide necessary access to existing systems and data for the automation process.",
+    "Client will be available for scheduled meetings to discuss project progress and requirements.",
+    "Client will supply all relevant documentation and information required for the discovery session.",
+    "Client will assist in identifying specific automations to be developed based on their needs.",
+    "Client will provide feedback on the proposed automation solutions during the project."
+  ],
+  "TIMELINE": {
+    "MILESTONES": [
+      {
+        "DESCRIPTION": "Discovery session",
+        "ESTIMATED_TIME": "2"
+      },
+      {
+        "DESCRIPTION": "Develop user-friendly interface",
+        "ESTIMATED_TIME": "4"
+      },
+      {
+        "DESCRIPTION": "Create AI backend logic",
+        "ESTIMATED_TIME": "5"
+      },
+      {
+        "DESCRIPTION": "Integrate with existing systems",
+        "ESTIMATED_TIME": "3"
+      },
+      {
+        "DESCRIPTION": "Testing and deployment",
+        "ESTIMATED_TIME": "3"
+      }
+    ],
+    "TOTAL_DURATION": "17"
+  },
+  "BUDGET": {
+    "TOTAL_COST": "Not specified",
+    "ADDITIONAL_COST": []
+  },
+  "DELIVERY_TEAM": {
+    "TEAM_MEMBERS": [
+      {
+        "NAME": "Samuel Cunningham"
+      },
+      {
+        "NAME": "Sean Oldenburger"
+      }
+    ]
+  },
+  "PAST_PROJECTS": {
+    "PAST_PROJECTS": [
+      {
+        "PROJECT_NAME": "SmartBroker PDF Extractor"
+      },
+      {
+        "PROJECT_NAME": "ECG Report Automation"
+      },
+      {
+        "PROJECT_NAME": "RTO Document Generation"
+      }
+    ]
+  }
+}
