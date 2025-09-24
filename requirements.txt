@@ -3,9 +3,9 @@ openai
 python-dotenv
 python-docx
 azure-storage-blob
-mcp-server-python
-fastmcp
+mcp==1.0.0
+fastmcp==0.4.0
 fastapi
 gunicorn
-uvicorn
+uvicorn[standard]
 starlette
