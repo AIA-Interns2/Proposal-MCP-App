@@ -1,11 +1,28 @@
 from typing import Any
 import os
 import datetime
+from fastapi import FastAPI
+from fastmcp import FastMCP
 from mcp.server.fastmcp import FastMCP
+from mcp.server.sse import SseServerTransport
+from starlette.applications import Starlette
+from starlette.routing import Mount, Route
+import uvicorn
 from AIA_ProposalAgent.prompt_func import *
 from AIA_ProposalAgent.projectinfo import load_project_info, clear_project_info
 from AIA_ProposalAgent.main import extract_project_info, create_word_doc
 from blob import upload_blob, download_blob
+
+# FastAPI app for REST endpoints
+app = FastAPI(title="Proposal MCP Agent")
+
+@app.get("/")
+async def root():
+    return {"message": "Proposal Agent Server Started"}
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
 
 # Initialize FastMCP server
 mcp = FastMCP("Proposal Agent")
@@ -57,5 +74,30 @@ def get_generated_proposal(user_input: str) -> str:
             except Exception as cleanup_error:
                 print(f"Failed to cleanup {doc_path}: {cleanup_error}")
 
+def create_sse_server(mcp: FastMCP):
+    transport = SseServerTransport("/messages/")
+    
+    async def handle_sse(request):
+        async with transport.connect_sse(
+            request.scope, 
+            request.receive, 
+            request._send
+        ) as streams:
+            await mcp._mcp_server.run(
+                streams[0], 
+                streams[1], 
+                mcp._mcp_server.create_initialization_options()
+            )
+    
+    routes = [
+        Route("/sse/", endpoint=handle_sse),
+        Mount("/messages/", app=transport.handle_post_message),
+    ]
+    
+    return Starlette(routes=routes)
+
+app.mount("/", create_sse_server(mcp))
+
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    port = int(os.environ.get('PORT', 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

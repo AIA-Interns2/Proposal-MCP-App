@@ -5,4 +5,5 @@ python-docx
 azure-storage-blob
 mcp
 fastmcp
+fastapi
 gunicorn

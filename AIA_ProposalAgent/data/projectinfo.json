@@ -5,51 +5,51 @@
     "CLIENT": "Kelly King",
     "PROJECT MANAGER": "Sean Oldenburger",
     "AUTHOR": "Sean Oldenburger",
-    "START DATE": "Not specified",
-    "END DATE": "2025-09-05",
+    "START DATE": "2025-09-05",
+    "END DATE": "2025-09-26",
     "PROJECT DESCRIPTION": "Automating workflows to reduce manual tasks and improve efficiency at a finance firm."
   },
-  "PLAN": "Website Interface:\n- Develop a user-friendly interface for automating workflows.\n- Include a drag-and-drop feature for uploading documents.\n- Provide a visual preview of uploaded documents.\n- Implement a page selection UI for users to choose which pages to extract information from.\n- Display a preview of extracted information in a structured format.\n- Enable export of extracted data to Word with styling options.\n- Ensure secure login with username and password protection.\n\nAI Backend Logic:\n- Create an AI system to automate the extraction of relevant information from uploaded documents.\n- Ensure an accuracy rate of 95%+ for data extraction.\n- Implement PDF parsing logic, including OCR for scanned documents.\n- Ensure secure file handling with instant erasure of data post-processing.\n- Develop logic for generating structured tables in Word format.\n\nIntegration with Existing Systems:\n- Assess current workflows and identify key operational challenges.\n- Integrate the automation system with existing CRM and invoicing systems.\n- Ensure compatibility with Microsoft Power Automate for workflow automation.\n\nDiscovery Phase:\n- Conduct a discovery session to outline the scope and feasibility of the project.\n- Identify specific automations to be developed based on client needs.\n- Gather necessary access and information required for the automation process.\n\nFuture Enhancements:\n- Plan for additional automations based on the outcomes of the discovery session.\n- Explore the potential for integrating AI note-taking capabilities during client meetings.\n- Consider developing a client portal for secure access to files and information.",
-  "SCOPE": "This project aims to automate workflows to reduce manual tasks and improve efficiency at Iconic Wealth, a finance firm. The automation will be developed using AI models to extract relevant information from uploaded documents, ensuring an accuracy rate of 95% or higher. The system will include features such as a user-friendly interface for document uploads, visual previews, and structured data extraction for export to Word format.\n\nAI Advancements will play a crucial role in the project by developing the AI backend logic that handles document parsing and data extraction. The project will also involve a discovery phase to outline the scope and feasibility of the automations, ensuring that the final solution meets the specific needs of the client.",
+  "PLAN": "Website Interface:\n- Develop a user-friendly interface for automating workflows.\n- Include a drag-and-drop feature for uploading documents.\n- Provide a visual preview of uploaded documents.\n- Implement a page selection UI for users to choose which pages to extract information from.\n- Display a preview of extracted information in a structured format.\n- Enable export of extracted data to Word with styling options.\n- Ensure secure login with username and password protection.\n\nAutomation Logic:\n- Conduct an initial discovery session to identify all automations needed.\n- Create a comprehensive list of automations to implement based on the discovery findings.\n- Develop feasibility assessments for each automation identified.\n- Design a high-level structure for each automation, detailing data requirements, touchpoints, and applications involved.\n- Implement automation solutions using Microsoft Power Automate as the preferred tool.\n- Ensure all automations comply with security requirements, especially regarding client data.\n\nIntegration:\n- Integrate the automation system with existing CRM and invoicing systems.\n- Ensure seamless data flow between the automation tools and current workflows.\n- Provide access to necessary applications and data for successful automation implementation.\n\nTesting and Iteration:\n- Conduct thorough testing of each automation to ensure functionality and efficiency.\n- Gather feedback from Kelly King and her team during the testing phase.\n- Iterate on the automation solutions based on feedback to improve performance and user experience.\n\nTraining and Support:\n- Provide training sessions for Kelly King and her team on how to use the new automation tools.\n- Offer ongoing support during the initial rollout phase to address any issues or questions.\n- Develop documentation outlining the processes and functionalities of the automation system for future reference.",
+  "SCOPE": "This project aims to automate workflows at Iconic Wealth, focusing on reducing manual tasks and improving efficiency within the finance firm. The automation will be developed using Microsoft Power Automate, leveraging AI to streamline processes and enhance productivity. The initial phase will involve a discovery session to identify all necessary automations, followed by the implementation of tailored solutions based on the findings.\n\nAI Advancements will play a crucial role in this project by conducting the discovery session, developing the automation solutions, and ensuring that all systems comply with security requirements. The team will provide training and ongoing support to Kelly King and her staff, ensuring a smooth transition to the new automated workflows.",
   "CONTRACT_STRUCTURE": "Not specified",
   "KEY_DELIVERABLES": [
-    "A user-friendly interface for automating workflows at Iconic Wealth.",
-    "A comprehensive discovery report outlining the scope and feasibility of the automation project.",
-    "An AI system capable of extracting relevant information from uploaded documents with an accuracy rate of 95% or higher.",
-    "Integration of the automation system with existing CRM and invoicing systems.",
-    "A structured data export feature that allows users to download extracted information in Word format."
+    "Conduct an initial discovery session to identify all necessary automations.",
+    "Develop a comprehensive list of automations to implement based on discovery findings.",
+    "Create feasibility assessments for each identified automation.",
+    "Design a high-level structure for each automation detailing data requirements and touchpoints.",
+    "Provide training sessions for Kelly King and her team on using the new automation tools."
   ],
   "ASSUMPTIONS": [
-    "Client will provide necessary access to existing systems and data for the automation process.",
-    "Client will be available for scheduled meetings to discuss project progress and requirements.",
-    "Client will supply all relevant documentation and information required for the discovery session.",
-    "Client will assist in identifying specific automations to be developed based on their needs.",
-    "Client will provide feedback on the proposed automation solutions during the project."
+    "Client will provide access to existing CRM and invoicing systems for integration.",
+    "Client will be available for scheduled meetings during the discovery and implementation phases.",
+    "Client will supply necessary data and information required for the automation solutions.",
+    "Client will ensure all security requirements are met for handling client data.",
+    "Client will apply for the small business growth grant to support the project budget."
   ],
   "TIMELINE": {
     "MILESTONES": [
       {
-        "DESCRIPTION": "Discovery session",
+        "DESCRIPTION": "Conduct initial discovery session",
         "ESTIMATED_TIME": "2"
       },
       {
-        "DESCRIPTION": "Develop user-friendly interface",
-        "ESTIMATED_TIME": "4"
-      },
-      {
-        "DESCRIPTION": "Create AI backend logic",
-        "ESTIMATED_TIME": "5"
-      },
-      {
-        "DESCRIPTION": "Integrate with existing systems",
+        "DESCRIPTION": "Develop list of automations",
         "ESTIMATED_TIME": "3"
       },
       {
-        "DESCRIPTION": "Testing and deployment",
+        "DESCRIPTION": "Create feasibility assessments",
+        "ESTIMATED_TIME": "2"
+      },
+      {
+        "DESCRIPTION": "Design high-level structure",
         "ESTIMATED_TIME": "3"
+      },
+      {
+        "DESCRIPTION": "Provide training sessions",
+        "ESTIMATED_TIME": "2"
       }
     ],
-    "TOTAL_DURATION": "17"
+    "TOTAL_DURATION": "12"
   },
   "BUDGET": {
     "TOTAL_COST": "Not specified",
@@ -58,23 +58,29 @@
   "DELIVERY_TEAM": {
     "TEAM_MEMBERS": [
       {
-        "NAME": "Samuel Cunningham"
+        "NAME": "Sean Oldenburger"
       },
       {
-        "NAME": "Sean Oldenburger"
+        "NAME": "Samuel Cunningham"
       }
     ]
   },
   "PAST_PROJECTS": {
     "PAST_PROJECTS": [
       {
-        "PROJECT_NAME": "SmartBroker PDF Extractor"
+        "PROJECT_NAME": "WADSIH AI Workshop Summariser"
+      },
+      {
+        "PROJECT_NAME": "AI Educational Tutors"
       },
       {
         "PROJECT_NAME": "ECG Report Automation"
       },
       {
         "PROJECT_NAME": "RTO Document Generation"
+      },
+      {
+        "PROJECT_NAME": "Endeavour Homes Automation"
       }
     ]
   }
