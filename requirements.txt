@@ -3,7 +3,7 @@ openai
 python-dotenv
 python-docx
 azure-storage-blob
-mcp
+mcp-server-python
 fastmcp
 fastapi
 gunicorn
